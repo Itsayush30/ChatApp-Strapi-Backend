@@ -8,7 +8,7 @@ module.exports = {
 
         const io = new Server(strapi.server.httpServer, {
             cors: {
-                origin: 'http://localhost:3000', 
+                origin: 'https://chatapp-strapi-backend.onrender.com', 
                 methods: ['GET', 'POST'],
                 allowedHeaders: ['my-custom-header'],
                 credentials: true
