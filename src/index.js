@@ -1,20 +1,60 @@
 'use strict';
 
 module.exports = {
-  /**
-   * An asynchronous register function that runs before
-   * your application is initialized.
-   *
-   * This gives you an opportunity to extend code.
-   */
-  register(/*{ strapi }*/) {},
+    register(/*{ strapi }*/) { },
 
-  /**
-   * An asynchronous bootstrap function that runs before
-   * your application gets started.
-   *
-   * This gives you an opportunity to set up your data model,
-   * run jobs, or perform some special logic.
-   */
-  bootstrap(/*{ strapi }*/) {},
+    bootstrap({ strapi }) {
+        const { Server } = require('socket.io');
+
+        const io = new Server(strapi.server.httpServer, {
+            cors: {
+                origin: 'http://localhost:3000', 
+                methods: ['GET', 'POST'],
+                allowedHeaders: ['my-custom-header'],
+                credentials: true
+            }
+        });
+
+        const users = {}; 
+
+        io.on('connection', (socket) => {
+            console.log('A user connected:', socket.id);
+
+            socket.on('register', (userId) => {
+                users[userId] = socket.id;
+                console.log(`User registered: ${userId} with socket ID: ${socket.id}`);
+            });
+
+            socket.on("sendMsg", (msgData) => {
+                const newMsg = {
+                    id: new Date().getTime(),
+                    uid: msgData.senderId,
+                    msg: msgData.msg
+                };
+
+                const recipientSocketId = users[msgData.recipientId];
+                if (recipientSocketId) {
+                    console.log(`Sending message from ${msgData.senderId} to ${msgData.recipientId}`);
+                    io.to(recipientSocketId).emit('recvMsg', newMsg); 
+                } else {
+                    console.log('Recipient not connected');
+                }
+
+                socket.emit('recvMsg', newMsg);
+            });
+
+            socket.on("disconnect", () => {
+                console.log("A user disconnected:", socket.id);
+
+                for (let userId in users) {
+                    if (users[userId] === socket.id) {
+                        delete users[userId];
+                        break;
+                    }
+                }
+            });
+        });
+
+        strapi.io = io;
+    },
 };
