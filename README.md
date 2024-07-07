@@ -1,61 +1,20 @@
-# 🚀 Getting started with Strapi
+# ChatApp
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+ChatApp is a modern web application built to provide seamless communication. It features a responsive and user-friendly interface and is built using React, Redux, and Tailwind CSS for the frontend, with Strapi powering the backend.
 
-### `develop`
+## Features
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+- Real-time messaging
+- User authentication (sign-up, login, logout)
+- Responsive design with Tailwind CSS
+- State management with Redux
+- Backend API built with Strapi
 
-```
-npm run develop
-# or
-yarn develop
-```
+<img width="1437" alt="Screenshot 2024-07-07 at 3 24 42 PM" src="https://github.com/Itsayush30/ChatApp-React-Frontend/assets/90981890/7ff3afb4-b56a-4df8-bfba-ce480c809b09">
 
-### `start`
+<img width="1440" alt="Screenshot 2024-07-07 at 3 27 06 PM" src="https://github.com/Itsayush30/ChatApp-React-Frontend/assets/90981890/8ed22059-8dcc-4904-bbb7-8783ec727838">
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+<img width="1440" alt="Screenshot 2024-07-07 at 1 18 47 PM" src="https://github.com/Itsayush30/ChatApp-React-Frontend/assets/90981890/8cae581d-5445-4807-8ff7-c87a1d7d7f6e">
 
-```
-npm run start
-# or
-yarn start
-```
+<img width="1435" alt="Screenshot 2024-07-07 at 2 26 11 PM" src="https://github.com/Itsayush30/ChatApp-React-Frontend/assets/90981890/dbc1c8f7-7cc5-4275-94e6-2de4a034027e">
 
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
-npm run build
-# or
-yarn build
-```
-
-## ⚙️ Deployment
-
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-```
-yarn strapi deploy
-```
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
